@@ -1,0 +1,26 @@
+# write a program using backtracking that take N numbers's array and a target and if any N numbers of sum is equal of target, return true
+# test case: nums = [10,20,35,65,5,25], target = 30
+# test case: target = 95
+# sum can be bigger than target.
+def solve(nums, target, idx, sum=0):
+    if idx == len(nums):
+        return ""
+        
+    for i in range(idx, len(nums)):
+        if sum + nums[i] == target:
+            return f"{nums[i]}"
+        if sum + nums[i] < target:
+                s = solve(nums, target, i+1,sum + nums[i])
+                if s:
+                    return f"{nums[i]} + {s}"
+                
+    return ""
+    
+if __name__ == "__main__":
+    nums = [int(i) for i in input().split()]
+    target = int(input())
+    sum = solve(nums, target, 0)
+    if sum:
+        print(f"{sum} = {target}")
+    else:
+        print("No")
