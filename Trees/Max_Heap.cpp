@@ -23,7 +23,7 @@ class Heap
 		if(right < size && array[max] < array[right])
 			max = right;
 		if(max != i) {
-			temp = array[i];
+			int temp = array[i];
 			array[i] = array[max];
 			array[max] = temp;
 			PercolateDown(max);
