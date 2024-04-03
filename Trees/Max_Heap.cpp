@@ -14,11 +14,10 @@ class Heap
 	unsigned int size;
 	unsigned int capacity;
 	//int heap_type;
-	void PercolateDown(int i = 0) {
-		int max = i,
-		temp;
-		int left = i*2+1;
-		int right = i*2+2;
+	void PercolateDown(unsigned int i = 0) {
+		unsigned int max = i,
+		left = i*2+1,
+		right = i*2+2;
 		if(left < size && array[i] < array[left])
 			max = left;
 		if(right < size && array[max] < array[right])
@@ -36,7 +35,7 @@ class Heap
 		int *arr, *array_old = array;
 		capacity = capacity * 2;
 		arr = new int[capacity];
-		for(short i = 0; i < size; i++)
+		for(unsigned int i = 0; i < size; i++)
 			arr[i] = array_old[i];
 		delete []array_old;
 		return arr;
@@ -53,7 +52,7 @@ class Heap
 		delete []array;
 	}
 	void insert(int data) {
-		int i;
+		unsigned int i;
 		if(size == capacity)
 			array = Resize();
 		i = size++;
@@ -73,7 +72,7 @@ class Heap
 		return v;
 	}
 	void printAll() {
-		for(int i = 0; i < size; i++)
+		for(unsigned int i = 0; i < size; i++)
 			cout<<array[i]<<" ";
 	}
 };
