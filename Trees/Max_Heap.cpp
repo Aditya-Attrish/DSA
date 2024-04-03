@@ -42,7 +42,7 @@ class Heap
 		return arr;
 	}
 	public:
-	Heap(int capacity = 2) {
+	Heap(unsigned int capacity = 2) {
 		if(capacity < 2) //Handle the error.
 			capacity = 2;
 		this->capacity = capacity;
@@ -63,17 +63,18 @@ class Heap
 		}
 		array[i] = data;
 	}
-	bool Delete() {
+	int Delete() {
 		if(size == 0)
-		return false;
+		return -1;
+		int v = array[0];
 		array[0] = array[size-1];
 		size--;
 		PercolateDown();
-		return true;
+		return v;
 	}
 	void printAll() {
 		for(int i = 0; i < size; i++)
-		cout<<array[i]<<" ";
+			cout<<array[i]<<" ";
 	}
 };
 // 20 11 15 10 8 12 21
