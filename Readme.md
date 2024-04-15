@@ -4,3 +4,4 @@
 	- Suddoku solver
 2. Trees
 	- Heap Tree
+	- AVL Tree
