@@ -188,7 +188,7 @@ class AvlTree {
 	}
 	
 	inline short getHeight(){
-		return height(this->root);
+		return height(this->root)+1;
 	}
 	
 	int Search(int data) {
