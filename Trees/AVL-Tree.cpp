@@ -187,10 +187,8 @@ class AvlTree {
 		cout<<endl;
 	}
 	
-	short getHeight(){
-		if(this->root == NULL)
-			return -1;
-		return this->root->Height;
+	inline short getHeight(){
+		return height(this->root);
 	}
 	
 	int Search(int data) {
